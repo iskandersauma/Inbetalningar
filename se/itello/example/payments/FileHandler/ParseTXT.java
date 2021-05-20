@@ -23,10 +23,10 @@ public class ParseTXT implements ParserInterface{
                     n++;
                     if(line.substring(0,1).equals(PostTypes.STARTOFSERVICE.postType)){
                         bp.setAccountNumber(line.substring(1,16).trim().replace(" ", ""));
-                        bp.setTotalSum(new BigDecimal(line.substring(16, 30).trim().replace(",", ".")));
+                        bp.setSum(new BigDecimal(line.substring(16, 30).trim().replace(",", ".")));
                         bp.setAmountOfPayments(Integer.parseInt(line.substring(30,40).trim()));
                         String date = line.substring(40,48).trim();
-                        bp.setDateOfPayments(new SimpleDateFormat("yyyyMMdd").parse(date));
+                        bp.setDate(new SimpleDateFormat("yyyyMMdd").parse(date));
                         bp.setCurrency(line.substring(48,51).trim());
                     }
                     else{
@@ -73,7 +73,7 @@ public class ParseTXT implements ParserInterface{
                 }
                 else if(line.substring(0,2).equals(PostTypes.ENDOFPAYMENTS.postType)){
                     if(br.readLine() == null){
-                        bp.setTotalSum(new BigDecimal(line.substring(2,20) + "." + line.substring(20,22)));
+                        bp.setSum(new BigDecimal(line.substring(2,20) + "." + line.substring(20,22)));
                         bp.setAmountOfPayments(Integer.parseInt(line.substring(30,38)));
                     }
                     else{

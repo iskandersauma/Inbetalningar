@@ -7,7 +7,7 @@ import se.itello.example.payments.objects.BundledPayments;
 
 public class Reader {
 
-    private String dir = "/home/iskander/eclipse-workspace/test-cases/src/se/itello/example/payments/TextFiles/";
+    private String dir = "se/itello/example/payments/TextFiles/";
     private ParseTXT parseTXT = new ParseTXT();
 
    public BundledPayments readFile(String fileName){

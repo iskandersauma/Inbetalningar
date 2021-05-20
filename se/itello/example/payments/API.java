@@ -17,7 +17,7 @@ public class API {
 
     private static void printValues(BundledPayments bp){
         PaymentReceiverImplementation pri = new PaymentReceiverImplementation();
-        pri.startPaymentBundle(bp.getAccountNumber(), bp.getDateOfPayments(), bp.getCurrency());
+        pri.startPaymentBundle(bp.getAccountNumber(), bp.getDate(), bp.getCurrency());
         for(int i = 0; i < bp.getSinglePayments().size(); i++){
             pri.payment(bp.getSinglePayments().get(i).getAmount(), bp.getSinglePayments().get(i).getReference());
         }
@@ -29,7 +29,7 @@ public class API {
         for(int i = 0; i < bp.getSinglePayments().size(); i++){
             tot = tot.add(bp.getSinglePayments().get(i).getAmount());
         }
-        return (tot.compareTo(bp.getTotalSum()) == 0);
+        return (tot.compareTo(bp.getSum()) == 0);
     }
     
 

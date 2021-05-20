@@ -47,11 +47,11 @@ public class BundledPayments {
         this.accountNumber = accountNumber;
     }
 
-    public BigDecimal getTotalSum(){
+    public BigDecimal getSum(){
         return this.sum;
     }
 
-    public void setTotalSum(BigDecimal sum){
+    public void setSum(BigDecimal sum){
         this.sum = sum;
     }
 
@@ -63,11 +63,11 @@ public class BundledPayments {
         this.amountOfPayments = amountOfPayments;
     }
 
-    public Date getDateOfPayments(){
+    public Date getDate(){
         return this.date;
     }
 
-    public void setDateOfPayments(Date date){
+    public void setDate(Date date){
         this.date = date;
     }
 
